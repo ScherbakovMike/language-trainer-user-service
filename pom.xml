@@ -17,6 +17,7 @@
   <properties>
     <java.version>17</java.version>
     <aws.java.sdk.version>2.23.3</aws.java.sdk.version>
+    <language-trainer-model.version>1.0-SNAPSHOT</language-trainer-model.version>
   </properties>
 
   <dependencyManagement>
@@ -59,7 +60,7 @@
     <dependency>
       <groupId>com.mikescherbakov</groupId>
       <artifactId>language-trainer-model</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>${language-trainer-model.version}</version>
     </dependency>
   </dependencies>
 
