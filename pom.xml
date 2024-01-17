@@ -18,8 +18,9 @@
     <java.version>17</java.version>
     <aws.java.sdk.version>2.23.3</aws.java.sdk.version>
     <language-trainer-model.version>1.0-SNAPSHOT</language-trainer-model.version>
-    <aws-serverless-java-container-springboot3.version>2.0.0-M2
-    </aws-serverless-java-container-springboot3.version>
+    <aws-serverless-java-container-springboot3.version>2.0.0-M2</aws-serverless-java-container-springboot3.version>
+    <logstash-logback-encoder.version>7.4</logstash-logback-encoder.version>
+    <logback-core.version>1.4.14</logback-core.version>
   </properties>
 
   <dependencyManagement>
@@ -48,6 +49,7 @@
       <artifactId>aws-serverless-java-container-springboot3</artifactId>
       <version>${aws-serverless-java-container-springboot3.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
