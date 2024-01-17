@@ -1,6 +1,6 @@
 package com.mikescherbakov.languagetraineruserservice.controller;
 
-import com.mikescherbakov.languagetraineruserservice.dto.ApiResponse;
+import com.mikescherbakov.languagetrainermodel.dto.ApiResponse;
 import com.mikescherbakov.languagetraineruserservice.repository.UserRepository;
 import customer.User;
 import java.text.MessageFormat;
