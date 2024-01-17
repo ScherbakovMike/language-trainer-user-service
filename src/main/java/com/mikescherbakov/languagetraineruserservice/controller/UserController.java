@@ -5,6 +5,8 @@ import com.mikescherbakov.languagetraineruserservice.repository.UserRepository;
 import customer.User;
 import java.text.MessageFormat;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping
 public class UserController {
 
   private final UserRepository repository;
@@ -44,14 +46,15 @@ public class UserController {
   public Mono<ApiResponse> getByUserId(@PathVariable String id) {
     return repository.findById(id)
         .map(user -> new ApiResponse(user, MessageFormat.format("Result found: {0}", user)))
-        .defaultIfEmpty(new ApiResponse((User) null, "User not found"));
+        .defaultIfEmpty(new ApiResponse(null, "User not found"));
   }
 
   @PostMapping
-  public Mono<ApiResponse> create(@RequestBody Mono<User> user) {
+  public Mono<ResponseEntity<ApiResponse>> create(@RequestBody Mono<User> user) {
     return user
         .flatMap(repository::save)
-        .map(user1 -> new ApiResponse(user1, "User successfully created"));
+        .map(user1 -> ResponseEntity.status(HttpStatus.CREATED)
+            .body(new ApiResponse(user1, "User successfully created")));
   }
 
   @PutMapping("/{id}")
@@ -66,7 +69,7 @@ public class UserController {
   }
 
   @DeleteMapping("/{id}")
-  public Mono<ApiResponse> update(@PathVariable String id) {
+  public Mono<ApiResponse> delete(@PathVariable String id) {
     return repository.delete(id)
         .map(userDeleted -> new ApiResponse(userDeleted, "User successfully deleted"));
   }

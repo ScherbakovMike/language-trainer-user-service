@@ -1,7 +1,6 @@
 package com.mikescherbakov.languagetraineruserservice.repository;
 
 import customer.User;
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -46,10 +45,8 @@ public class UserRepository {
   }
 
   public Mono<User> save(User entity) {
-    var newEntity = new User(UUID.randomUUID().toString(), entity.getFirstName(),
-        entity.getLastName());
-    var putRequest = PutItemEnhancedRequest.builder(User.class).item(newEntity).build();
-    return Mono.fromCompletionStage(userTable.putItem(putRequest).thenApply(x -> newEntity));
+    var putRequest = PutItemEnhancedRequest.builder(User.class).item(entity).build();
+    return Mono.fromCompletionStage(userTable.putItem(putRequest).thenApply(x -> entity));
   }
 
   private Key getKeyBuild(String id) {

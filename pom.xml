@@ -18,6 +18,8 @@
     <java.version>17</java.version>
     <aws.java.sdk.version>2.23.3</aws.java.sdk.version>
     <language-trainer-model.version>1.0-SNAPSHOT</language-trainer-model.version>
+    <aws-serverless-java-container-springboot3.version>2.0.0-M2
+    </aws-serverless-java-container-springboot3.version>
   </properties>
 
   <dependencyManagement>
@@ -40,6 +42,11 @@
       <groupId>software.amazon.awssdk</groupId>
       <artifactId>dynamodb-enhanced</artifactId>
       <version>${aws.java.sdk.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.amazonaws.serverless</groupId>
+      <artifactId>aws-serverless-java-container-springboot3</artifactId>
+      <version>${aws-serverless-java-container-springboot3.version}</version>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
