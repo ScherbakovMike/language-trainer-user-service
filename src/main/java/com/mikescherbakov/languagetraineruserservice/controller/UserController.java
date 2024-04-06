@@ -1,8 +1,8 @@
 package com.mikescherbakov.languagetraineruserservice.controller;
 
+import com.mikescherbakov.languagetrainermodel.customer.User;
 import com.mikescherbakov.languagetrainermodel.dto.ApiResponse;
 import com.mikescherbakov.languagetraineruserservice.repository.UserRepository;
-import customer.User;
 import java.text.MessageFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

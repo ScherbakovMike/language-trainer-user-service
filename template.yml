@@ -39,7 +39,7 @@ Outputs:
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   LanguageTrainerUserServiceFunctionApi:
     Description: "API Gateway endpoint URL for Prod stage for User Service function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/prod/users/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/users/"
   LanguageTrainerUserServiceFunction:
     Description: "UserService Lambda Function ARN"
     Value: !GetAtt LanguageTrainerUserServiceFunction.Arn

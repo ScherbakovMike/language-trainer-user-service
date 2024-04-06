@@ -1,6 +1,6 @@
 package com.mikescherbakov.languagetraineruserservice.config;
 
-import customer.User;
+import com.mikescherbakov.languagetrainermodel.customer.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

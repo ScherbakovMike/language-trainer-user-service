@@ -1,6 +1,6 @@
 package com.mikescherbakov.languagetraineruserservice.repository;
 
-import customer.User;
+import com.mikescherbakov.languagetrainermodel.customer.User;
 import java.util.concurrent.atomic.AtomicInteger;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
